@@ -1,0 +1,10 @@
+[Unit]
+Description=OpenSMTPD
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/smtpd -d
+ExecStop=/usr/bin/smtpctl stop
+
+[Install]
+WantedBy=multi-user.target
