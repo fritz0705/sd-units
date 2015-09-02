@@ -1,0 +1,12 @@
+[Unit]
+Description=Reopen %i zpool
+After=cryptsetup.target
+After=zed.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/zpool reopen %i
+
+[Install]
+WantedBy=zfs.target
+
